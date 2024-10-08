@@ -140,36 +140,42 @@ function MainPage() {
               rating="4/6"
               title="فیلتر بنزین مدل 6043 مناسب برای برلیانس H230"
               price={100000}
+              className="border-[1.5px] border-transparent transition-colors hover:border-primary-500"
             />
             <ProductCard
               imageUrl="/assets/gas-filter.png"
               rating="4/6"
               title="فیلتر بنزین مدل 6043 مناسب برای برلیانس H230"
               price={100000}
+              className="border-[1.5px] border-transparent transition-colors hover:border-primary-500"
             />
             <ProductCard
               imageUrl="/assets/gas-filter.png"
               rating="4/6"
               title="فیلتر بنزین مدل 6043 مناسب برای برلیانس H230"
               price={100000}
+              className="border-[1.5px] border-transparent transition-colors hover:border-primary-500"
             />
             <ProductCard
               imageUrl="/assets/gas-filter.png"
               rating="4/6"
               title="فیلتر بنزین مدل 6043 مناسب برای برلیانس H230"
               price={100000}
+              className="border-[1.5px] border-transparent transition-colors hover:border-primary-500"
             />
             <ProductCard
               imageUrl="/assets/gas-filter.png"
               rating="4/6"
               title="فیلتر بنزین مدل 6043 مناسب برای برلیانس H230"
               price={100000}
+              className="border-[1.5px] border-transparent transition-colors hover:border-primary-500"
             />
             <ProductCard
               imageUrl="/assets/gas-filter.png"
               rating="4/6"
               title="فیلتر بنزین مدل 6043 مناسب برای برلیانس H230"
               price={100000}
+              className="border-[1.5px] border-transparent transition-colors hover:border-primary-500"
             />
           </div>
         </div>

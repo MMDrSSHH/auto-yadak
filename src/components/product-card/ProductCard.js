@@ -11,9 +11,10 @@ function ProductCard({
   rating,
   discountPrice = null,
   price,
+  className = "",
 }) {
   return (
-    <div className="bg-white rounded-[16px] h-[320px] relative">
+    <div className={`bg-white rounded-[16px] h-[320px] relative ${className}`}>
       {/* Discount percent */}
       {discount && (
         <div

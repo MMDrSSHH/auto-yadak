@@ -30,6 +30,7 @@ function SpecialEventCarousel() {
             rating={"4/2"}
             title="لاستیک پژو 207 یزد تایر"
             imageUrl="/assets/207-yazd-tire.png"
+            className="border-[1.5px] border-transparent transition-colors hover:border-text-400"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -40,6 +41,7 @@ function SpecialEventCarousel() {
             rating={"4/2"}
             title="لاستیک پژو 207 یزد تایر"
             imageUrl="/assets/207-yazd-tire.png"
+            className="border-[1.5px] border-transparent transition-colors hover:border-text-400"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -50,6 +52,7 @@ function SpecialEventCarousel() {
             rating={"4/2"}
             title="لاستیک پژو 207 یزد تایر"
             imageUrl="/assets/207-yazd-tire.png"
+            className="border-[1.5px] border-transparent transition-colors hover:border-text-400"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -60,6 +63,7 @@ function SpecialEventCarousel() {
             rating={"4/2"}
             title="لاستیک پژو 207 یزد تایر"
             imageUrl="/assets/207-yazd-tire.png"
+            className="border-[1.5px] border-transparent transition-colors hover:border-text-400"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -70,6 +74,7 @@ function SpecialEventCarousel() {
             rating={"4/2"}
             title="لاستیک پژو 207 یزد تایر"
             imageUrl="/assets/207-yazd-tire.png"
+            className="border-[1.5px] border-transparent transition-colors hover:border-text-400"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -80,6 +85,7 @@ function SpecialEventCarousel() {
             rating={"4/2"}
             title="لاستیک پژو 207 یزد تایر"
             imageUrl="/assets/207-yazd-tire.png"
+            className="border-[1.5px] border-transparent transition-colors hover:border-text-400"
           />
         </SwiperSlide>
       </Swiper>
