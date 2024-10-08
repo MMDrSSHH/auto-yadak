@@ -4,7 +4,7 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <div className="py-[153px] flex justify-center">
+    <div className="py-[153px] flex justify-center border-[0.5px] border-primary-600 bg-white rounded-[48px]">
       {/* Left logo section */}
       <div className="text-center ml-[20px]">
         <AutoYadakLogo className="text-[81px]" />

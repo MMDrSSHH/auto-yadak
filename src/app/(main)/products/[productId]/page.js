@@ -202,7 +202,7 @@ function ProductDetailsPage({ params: { productId } }) {
         />
 
         {/* Related products list */}
-        <div className="mt-[32px] grid grid-cols-6 gap-[20px]">
+        <div className="mt-[32px] grid grid-cols-6 gap-[20px] mb-[164px]">
           <ProductCard
             imageUrl="/assets/gas-filter.png"
             rating="4/6"

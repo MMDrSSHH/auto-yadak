@@ -22,6 +22,10 @@ import RateStarOutline from "./rate-star-outline.svg";
 import DislikeOutline from "./dislike-outline.svg";
 import LikeOutline from "./like-outline.svg";
 import Edit2Bold from "./edit-2-bold.svg";
+import ShieldTickOutline from "./shield-tick-outline.svg";
+import ShopOutline from "./shop-outline.svg";
+import AddOutline from "./add-outline.svg";
+import TrashOutline from "./trash-outline.svg";
 
 export {
   SearchOutline,
@@ -48,4 +52,8 @@ export {
   DislikeOutline,
   LikeOutline,
   Edit2Bold,
+  ShieldTickOutline,
+  ShopOutline,
+  AddOutline,
+  TrashOutline,
 };

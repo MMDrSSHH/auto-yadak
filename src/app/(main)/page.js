@@ -181,7 +181,7 @@ function MainPage() {
         </div>
 
         {/* Articles section */}
-        <div className="mt-[64px]">
+        <div className="mt-[64px] mb-[110px]">
           <MenuSectionHeader title="مقالات" linkLabel="مشاهده همه" />
           <div className="mt-[32px] grid grid-cols-3 gap-[20px]">
             <ArticleCard
