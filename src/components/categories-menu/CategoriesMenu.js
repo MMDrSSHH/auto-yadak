@@ -277,6 +277,7 @@ function CategoriesMenu() {
   const toggleMenu = () => {
     setIsShowMenu((prev) => !prev);
     setIsShowSubMenu(false);
+    setActivatedMenuId(null);
   };
 
   const closeMenu = () => {
