@@ -2,7 +2,7 @@ import React from "react";
 import Container from "../layout/Container";
 import Link from "next/link";
 import NavBarSearchBar from "../searchbar/NavBarSearchBar";
-import { AutoYadakLogo, LoginOutline, ShoppingCartOutline } from "../icons";
+import { AutoYadakLogo, ShoppingCartOutline, UserOutline } from "../icons";
 import CategoriesMenu from "../categories-menu/CategoriesMenu";
 import NavItem from "./NavItem";
 
@@ -32,7 +32,7 @@ function Navbar() {
               href="/login"
               className="px-[26px] border-[0.5px] border-primary-500 text-primary-500 rounded-[8px] text-[16px] font-medium flex items-center gap-[12px]"
             >
-              <LoginOutline className="text-[24px] rotate-180" />
+              <UserOutline className="text-[24px]" />
               <span>ثبت‌نام/ ورود</span>
             </Link>
 
