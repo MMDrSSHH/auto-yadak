@@ -26,6 +26,7 @@ import ShieldTickOutline from "./shield-tick-outline.svg";
 import ShopOutline from "./shop-outline.svg";
 import AddOutline from "./add-outline.svg";
 import TrashOutline from "./trash-outline.svg";
+import ArrowUpOutline from "./arrow-up-outline.svg";
 
 export {
   SearchOutline,
@@ -56,4 +57,5 @@ export {
   ShopOutline,
   AddOutline,
   TrashOutline,
+  ArrowUpOutline,
 };

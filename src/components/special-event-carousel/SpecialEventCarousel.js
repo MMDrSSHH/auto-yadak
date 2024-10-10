@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, useSwiper, useSwiperSlide } from "swiper/react";
 import ProductCard from "../product-card/ProductCard";
-import { TimerOutline } from "../icons";
+import { ArrowUpOutline, TimerOutline } from "../icons";
 import Timer from "./Timer";
 
 function SpecialEventCarousel() {
@@ -27,7 +27,13 @@ function SpecialEventCarousel() {
       </div>
 
       {/* products carousel */}
-      <Swiper className="flex-1" slidesPerView={5.2} spaceBetween={20}>
+      <Swiper
+        className="flex-1 relative"
+        slidesOffsetAfter={28}
+        slidesOffsetBefore={28}
+        slidesPerView={5.2}
+        spaceBetween={20}
+      >
         <SwiperSlide>
           <ProductCard
             discount={50}
@@ -94,9 +100,38 @@ function SpecialEventCarousel() {
             className="border-[1.5px] border-transparent transition-colors hover:border-text-400"
           />
         </SwiperSlide>
+
+        <ForwardBtn />
+        <PrevBtn />
       </Swiper>
     </div>
   );
 }
+
+const ForwardBtn = () => {
+  const swiper = useSwiper();
+
+  return (
+    <button
+      onClick={() => swiper.slideNext()}
+      className="bg-white border border-text-200 text-text-400 w-[40px] aspect-square rounded-full flex items-center justify-center absolute top-1/2 left-[16px] z-10"
+    >
+      <ArrowUpOutline className="-rotate-90" />
+    </button>
+  );
+};
+
+const PrevBtn = () => {
+  const swiper = useSwiper();
+
+  return (
+    <button
+      onClick={() => swiper.slidePrev()}
+      className="bg-white border border-text-200 text-text-400 w-[40px] aspect-square rounded-full flex items-center justify-center absolute top-1/2 right-[16px] z-10"
+    >
+      <ArrowUpOutline className="rotate-90" />
+    </button>
+  );
+};
 
 export default SpecialEventCarousel;
