@@ -2,6 +2,7 @@ import Container from "@/components/layout/Container";
 import MenuSectionHeader from "@/components/menu-section-header/MenuSectionHeader";
 import ProductCard from "@/components/product-card/ProductCard";
 import ShoppingCartItemCard from "@/components/shopping-cart-item-card/ShoppingCartItemCard";
+import formatCurrency from "@/utils/currencyFormatter";
 import Link from "next/link";
 import React from "react";
 
@@ -37,7 +38,7 @@ function ShoppingCartPage() {
               جمع سبد خرید شما
             </span>
             <span className="mt-[24px] text-black text-[16px] font-bold">
-              1650000تومان
+              {formatCurrency(1650000)}تومان
             </span>
             <button className="mt-[32px] w-[60%] bg-primary-500 h-[48px] text-white rounded-[8px] text-[14px] font-medium">
               تایید و تکمیل سفارش

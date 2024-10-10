@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React from "react";
 import { RatingStarFilled } from "../icons";
+import currencyFormatter from "@/utils/currencyFormatter";
 
 function ProductCard({
   discount = null,
@@ -14,7 +15,9 @@ function ProductCard({
   className = "",
 }) {
   return (
-    <div className={`bg-white rounded-[16px] h-[320px] border-[1.5px] border-transparent relative ${className}`}>
+    <div
+      className={`bg-white rounded-[16px] h-[320px] border-[1.5px] border-transparent relative ${className}`}
+    >
       {/* Discount percent */}
       {discount && (
         <div
@@ -50,13 +53,13 @@ function ProductCard({
           {/* non-discount price */}
           {discountPrice && (
             <span className="self-end line-through text-[#929292] text-[12px] font-medium">
-              {price}تومان
+              {currencyFormatter(price)}تومان
             </span>
           )}
 
           {/* discount price */}
           <span className="self-end text-text-900 text-[14px] font-bold">
-            {discountPrice ? discountPrice : price}تومان
+            {currencyFormatter(discountPrice ? discountPrice : price)}تومان
           </span>
         </div>
       </div>

@@ -6,6 +6,7 @@ import {
   ShopOutline,
   TrashOutline,
 } from "../icons";
+import formatCurrency from "@/utils/currencyFormatter";
 
 function ShoppingCartItemCard({
   imageUrl,
@@ -44,15 +45,15 @@ function ShoppingCartItemCard({
           {discountPrice ? (
             <>
               <span className="text-[#929292] text-[12px] font-medium line-through">
-                {price}تومان
+                {formatCurrency(price)}تومان
               </span>
               <span className="text-[16px] font-bold text-black">
-                {discountPrice}تومان
+                {formatCurrency(discountPrice)}تومان
               </span>
             </>
           ) : (
             <span className="text-[16px] font-bold text-black">
-              {price}تومان
+              {formatCurrency(price)}تومان
             </span>
           )}
         </div>

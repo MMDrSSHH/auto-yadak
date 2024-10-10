@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { ConvertCardOutline, VerifyOutline } from "../icons";
 import Warranty from "../warrranty/Warranty";
+import formatCurrency from "@/utils/currencyFormatter";
 
 function ProductDetailsAddToCart({ price }) {
   const [orderCount, setOrderCount] = useState(1);
@@ -19,7 +20,7 @@ function ProductDetailsAddToCart({ price }) {
       {/* Price */}
       <div className="flex justify-between items-center text-[#242424]">
         <span className="font-medium">قیمت:</span>
-        <span className="font-bold">{price} تومان</span>
+        <span className="font-bold">{formatCurrency(price)} تومان</span>
       </div>
 
       {/* Warranties */}
