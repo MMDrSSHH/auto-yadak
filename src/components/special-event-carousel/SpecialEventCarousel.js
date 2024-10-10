@@ -16,7 +16,13 @@ function SpecialEventCarousel() {
           <span className="text-[28px] font-bold text-white">اتوآف</span>
 
           {/* Timer */}
-          <Timer />
+          <Timer
+            expiryTimestamp={
+              new Date(
+                Date.now() + 20 * 60 * 60 * 1000 + 10 * 60 * 1000 + 16 * 1000
+              )
+            }
+          />
         </div>
       </div>
 

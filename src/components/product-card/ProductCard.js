@@ -14,12 +14,12 @@ function ProductCard({
   className = "",
 }) {
   return (
-    <div className={`bg-white rounded-[16px] h-[320px] relative ${className}`}>
+    <div className={`bg-white rounded-[16px] h-[320px] border-[1.5px] border-transparent relative ${className}`}>
       {/* Discount percent */}
       {discount && (
         <div
           dir="ltr"
-          className="bg-[#D42E4A] z-10 flex justify-center items-center w-[28px] h-[30px] absolute top-0 left-[12px] rounded-b-full pb-[4px] text-white text-[10px] font-semibold"
+          className="bg-[#D42E4A] z-10 flex justify-center items-center w-[28px] h-[30px] absolute top-[-1.5px] left-[12px] rounded-b-full pb-[4px] text-white text-[10px] font-semibold"
         >
           {discount}%
         </div>
