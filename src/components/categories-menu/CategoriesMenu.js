@@ -248,11 +248,21 @@ import MenuItem from "./MenuItem";
 const categoriesMenuContext = createContext(null);
 
 export const useMenu = () => {
-  const { isShowSubMenu, openSubMenu, closeSubMenu, closeMenu } = useContext(
-    categoriesMenuContext
-  );
+  const {
+    isShowSubMenu,
+    openSubMenu,
+    closeSubMenu,
+    closeMenu,
+    activatedMenuId,
+  } = useContext(categoriesMenuContext);
 
-  return { isShowSubMenu, openSubMenu, closeSubMenu, closeMenu };
+  return {
+    isShowSubMenu,
+    openSubMenu,
+    closeSubMenu,
+    closeMenu,
+    activatedMenuId,
+  };
 };
 
 function CategoriesMenu() {
@@ -262,6 +272,7 @@ function CategoriesMenu() {
   // const subMenuRef = useRef(null);
   const triggerRef = useRef(null);
   const [subMenuContent, setSubMenuContent] = useState(null);
+  const [activatedMenuId, setActivatedMenuId] = useState(null);
 
   const toggleMenu = () => {
     setIsShowMenu((prev) => !prev);
@@ -271,15 +282,18 @@ function CategoriesMenu() {
   const closeMenu = () => {
     setIsShowMenu(false);
     setIsShowSubMenu(false);
+    setActivatedMenuId(null);
   };
 
-  const openSubMenu = (content) => {
+  const openSubMenu = (content, menuId) => {
     setSubMenuContent(content);
+    setActivatedMenuId(menuId);
     setIsShowSubMenu(true);
   };
 
   const closeSubMenu = () => {
     setIsShowSubMenu(false);
+    setActivatedMenuId(null);
   };
 
   useEffect(() => {
@@ -304,7 +318,13 @@ function CategoriesMenu() {
 
   return (
     <categoriesMenuContext.Provider
-      value={{ isShowSubMenu, openSubMenu, closeSubMenu, closeMenu }}
+      value={{
+        isShowSubMenu,
+        openSubMenu,
+        closeSubMenu,
+        closeMenu,
+        activatedMenuId,
+      }}
     >
       <div className="relative">
         <button
@@ -323,10 +343,10 @@ function CategoriesMenu() {
           >
             {/* SubMenues */}
             <div className="flex flex-col gap-[24px] relative z-30">
-              <SubMenu isRoot label="برند خودرو">
+              <SubMenu isRoot label="برند خودرو" id="brand">
                 <div>برند خودرو</div>
               </SubMenu>
-              <SubMenu isRoot label="قطعات بدنه">
+              <SubMenu isRoot label="قطعات بدنه" id="body-parts">
                 <SubMenu label="بدنه و شیشه">
                   <MenuItem href="#" label="کاپوت" />
                   <MenuItem href="#" label="درب صندوق عقب" />
@@ -357,32 +377,32 @@ function CategoriesMenu() {
                 </SubMenu>
                 <SubMenu label="سایر قطعات" />
               </SubMenu>
-              <SubMenu isRoot label="موتور و اگزوز خودرو">
-                fwf 2
+              <SubMenu isRoot label="موتور و اگزوز خودرو" id="enging-exhustion">
+                موتور و اگزوز خودرو
               </SubMenu>
-              <SubMenu isRoot label="برقی و الکتریکی">
-                fwf 2
+              <SubMenu isRoot label="برقی و الکتریکی" id="electronics">
+                برقی و الکتریکی
               </SubMenu>
-              <SubMenu isRoot label="رینگ و لاستیک">
-                fwf 2
+              <SubMenu isRoot label="رینگ و لاستیک" id="tire-ring">
+                رینگ و لاستیک
               </SubMenu>
-              <SubMenu isRoot label="روغن و فیلتر">
-                fwf 2
+              <SubMenu isRoot label="روغن و فیلتر" id="oil-filter">
+                روغن و فیلتر
               </SubMenu>
-              <SubMenu isRoot label="قطعات داخلی">
-                fwf 2
+              <SubMenu isRoot label="قطعات داخلی" id="internal-parts">
+                قطعات داخلی
               </SubMenu>
-              <SubMenu isRoot label="انتقال قدرت">
-                fwf 2
+              <SubMenu isRoot label="انتقال قدرت" id="transmission">
+                انتقال قدرت
               </SubMenu>
-              <SubMenu isRoot label="فرمان، جلوبندی و ترمز">
-                fwf 2
+              <SubMenu isRoot label="فرمان، جلوبندی و ترمز" id="steering">
+                فرمان، جلوبندی و ترمز
               </SubMenu>
-              <SubMenu isRoot label="لوازم جانبی و اسپورت">
-                fwf 2
+              <SubMenu isRoot label="لوازم جانبی و اسپورت" id="sport-parts">
+                لوازم جانبی و اسپورت
               </SubMenu>
-              <SubMenu isRoot label="لوازم مصرفی خودرو">
-                fwf 2
+              <SubMenu isRoot label="لوازم مصرفی خودرو" id="something">
+                لوازم مصرفی خودرو
               </SubMenu>
             </div>
 
