@@ -1,12 +1,16 @@
 "use client";
 
-import React from "react";
-import { Swiper, SwiperSlide, useSwiper, useSwiperSlide } from "swiper/react";
-import ProductCard from "../product-card/ProductCard";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { ArrowUpOutline, TimerOutline } from "../icons";
+import ProductCard from "../product-card/ProductCard";
 import Timer from "./Timer";
+import { useState } from "react";
+import { FreeMode } from "swiper/modules";
+// import "swiper/css/free-mode";
 
 function SpecialEventCarousel() {
+  const [isEnd, setIsEnd] = useState(false);
+  const [isBeginning, setIsBeginning] = useState(false);
   return (
     <div className=" py-[32px] mt-[64px] bg-[#E3314F] rounded-[24px] flex">
       {/* Right timer wrapper */}
@@ -32,7 +36,24 @@ function SpecialEventCarousel() {
         slidesOffsetAfter={28}
         slidesOffsetBefore={28}
         slidesPerView={5.2}
+        freeMode={true}
+        modules={[FreeMode]}
         spaceBetween={20}
+        // Init state for btns activation
+        onBeforeInit={(swiper) => {
+          setIsEnd(swiper.isEnd);
+          setIsBeginning(swiper.isBeginning);
+        }}
+        // Moving to edges state for btns activation
+        onToEdge={(swiper) => {
+          setIsEnd(swiper.isEnd);
+          setIsBeginning(swiper.isBeginning);
+        }}
+        // Moving from edges state for btns activation
+        onFromEdge={(swiper) => {
+          setIsEnd(swiper.isEnd);
+          setIsBeginning(swiper.isBeginning);
+        }}
       >
         <SwiperSlide>
           <ProductCard
@@ -101,33 +122,39 @@ function SpecialEventCarousel() {
           />
         </SwiperSlide>
 
-        <ForwardBtn />
-        <PrevBtn />
+        <ForwardBtn isActive={!isEnd} />
+        <PrevBtn isActive={!isBeginning} />
       </Swiper>
     </div>
   );
 }
 
-const ForwardBtn = () => {
+const ForwardBtn = ({ isActive }) => {
   const swiper = useSwiper();
 
   return (
     <button
       onClick={() => swiper.slideNext()}
-      className="bg-white border border-text-200 text-text-400 w-[40px] aspect-square rounded-full flex items-center justify-center absolute top-1/2 left-[16px] z-10"
+      style={{
+        display: isActive ? "flex" : "none",
+      }}
+      className="bg-white border border-text-200 text-text-400 w-[40px] aspect-square rounded-full items-center justify-center absolute top-1/2 left-[16px] z-10"
     >
       <ArrowUpOutline className="-rotate-90" />
     </button>
   );
 };
 
-const PrevBtn = () => {
+const PrevBtn = ({ isActive }) => {
   const swiper = useSwiper();
 
   return (
     <button
       onClick={() => swiper.slidePrev()}
-      className="bg-white border border-text-200 text-text-400 w-[40px] aspect-square rounded-full flex items-center justify-center absolute top-1/2 right-[16px] z-10"
+      style={{
+        display: isActive ? "flex" : "none",
+      }}
+      className="bg-white border border-text-200 text-text-400 w-[40px] aspect-square rounded-full items-center justify-center absolute top-1/2 right-[16px] z-10"
     >
       <ArrowUpOutline className="rotate-90" />
     </button>
